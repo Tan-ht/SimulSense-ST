@@ -1,0 +1,26 @@
+[project]
+name = "simulsense-st"
+version = "0.1.0"
+description = "SimulSense speech-to-text translation for en-zh, en-de, and en-ja"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+license = {file = "LICENSE"}
+dependencies = [
+    "fairseq", "simuleval", "simulstream",
+    "torch==2.7.0", "torchaudio==2.7.0",
+    "transformers==4.51.3", "peft==0.17.0", "accelerate>=1.0,<2",
+    "numpy==1.26.4", "numba<0.59", "librosa>=0.10,<0.12",
+    "soundfile>=0.12.1", "safetensors>=0.4.3", "huggingface-hub>=0.30,<1",
+    "sacrebleu[ja]>=2.4.3", "sentencepiece>=0.2.0", "sacremoses>=0.1.1",
+    "jiwer>=4.0.0", "silero-vad>=6.2.0", "tensorboardx>=2.6.2.2",
+    "pyyaml>=6.0.2", "pandas>=2.2.3", "tqdm>=4.64.1",
+]
+
+[project.optional-dependencies]
+streaming-metrics = ["unbabel-comet==2.2.6", "mweralign>=1.0.1", "jieba>=0.42.1"]
+flash-attn = ["flash-attn>=2.7.1,<=2.7.4"]
+
+[tool.uv.sources]
+fairseq = {path = "fairseq", editable = true}
+simuleval = {path = "SimulEval", editable = true}
+simulstream = {path = "simulstream", editable = true}

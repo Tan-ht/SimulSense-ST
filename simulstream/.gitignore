@@ -1,0 +1,15 @@
+
+.idea/
+
+venv
+*egg-info
+
+*.jsonl
+
+**/__pycache__/
+
+docs/build
+docs/source/generated
+docs/source/_autosummary
+
+**/.DS_Store

@@ -1,0 +1,83 @@
+# ---- All project specifications ---- #
+[project]
+name = "simulstream"
+description = "A server to run simultaneous/streaming experiments and demo"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [
+    { name = "Marco Gaido", email = "mgaido@fbk.eu" },
+    { name = "FBK HLT-MT", email = "mt@fbk.eu" },
+]
+keywords = ["simultaneous", "demo", "websocket", "streaming"]
+dependencies = [
+    "pyyaml>6.0",
+    "websockets",
+    "torch",
+    "librosa"
+]
+dynamic = ["version"]
+
+[project.urls]
+GitHub = "https://github.com/hlt-mt/simulstream"
+Issues = "https://github.com/hlt-mt/simulstream/issues"
+
+[project.scripts]
+# Server
+simulstream_server = "simulstream.server.websocket_server:cli_main"
+simulstream_demo_http_server = "simulstream.server.http_server:cli_main"
+
+# Client
+simulstream_wavs_client = "simulstream.client.wav_reader_client:cli_main"
+
+# Evaluation
+simulstream_inference = "simulstream.inference:cli_main"
+simulstream_score_quality = "simulstream.metrics.score_quality:cli_main"
+simulstream_score_latency = "simulstream.metrics.score_latency:cli_main"
+simulstream_stats = "simulstream.metrics.stats:cli_main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.4.0",
+    "flake8",
+    "sphinx",
+    "sphinx-rtd-theme",
+    "build",
+    "twine",
+]
+
+hf = [
+    "transformers==4.48.1",
+]
+
+canary = [
+    "Cython",
+    "nemo_toolkit[asr]==2.4.0",
+]
+
+vad = [
+    "silero-vad"
+]
+
+eval = [
+    "unbabel-comet==2.2.6",
+    "mweralign",
+    "sacrebleu"
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "simulstream.__version__"}
+
+
+# ---- Explicit project build information ---- #
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = [""]
+
+[tool.setuptools.package-data]
+webdemo = ["webdemo"]
+configs = ["config"]
+
