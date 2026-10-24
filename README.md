@@ -1,4 +1,4 @@
-# SimulSense-ST: Learning When to Speak
+# SimulSense: Sense-Driven Interpreting for Efficient Simultaneous Speech Translation
 
 <div align="center">
 
@@ -9,18 +9,19 @@
 
 </div>
 
-Speech-to-text release of **Learning When to Speak: Human-Inspired Unit Sensing
-for Machine Simultaneous Interpretation**.
-This repository is also associated with
-**[SimulSense: Sense-Driven Interpreting for Efficient Simultaneous Speech Translation](https://arxiv.org/pdf/2509.21932)**
-by Haotian Tan, Hiroki Ouchi, and Sakriani Sakti, which presents the SimulSense
-framework for sense-driven read/write decisions in simultaneous speech translation.
+**SimulSense** is a simultaneous speech translation framework inspired by how
+human interpreters listen and translate. It continuously processes incoming
+speech and begins translating when it detects a **sense unit**—a meaningful
+segment that conveys a complete thought. A lightweight **Sense Units Detector
+(SUD)** identifies these units from acoustic features and triggers an
+LLM-based speech translation model trained on parallel speech–text data.
+Separating read/write decisions from translation generation enables efficient
+streaming inference with flexible control over the quality–latency tradeoff.
 
-SimulSense detects interpretation units in incoming speech to decide when a
-speech translation model should produce text. This repository provides the
-shared unit detector, Whisper + Qwen translation models, training code, and
-simultaneous and continuous-stream evaluation for **English → Chinese, German,
-and Japanese**.
+This repository provides the unit detector, Whisper + Qwen translation models,
+training recipes, and evaluation tools for both utterance-level simultaneous
+translation and continuous speech streams, supporting **English → Chinese,
+German, and Japanese**.
 
 **[Quick Start](#-quick-start)** · **[Models](#models)** ·
 **[Data](#data-layout)** · **[Inference](#inference)** ·
