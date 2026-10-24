@@ -3,6 +3,7 @@
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-IEEE%20Xplore-brightgreen)](https://ieeexplore.ieee.org/document/11732033)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.21932-b31b1b)](https://arxiv.org/abs/2509.21932)
 [![Models](https://img.shields.io/badge/Models-Hugging%20Face-blue)](https://huggingface.co/tan-ht/SimulSense)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
@@ -10,6 +11,11 @@
 
 Speech-to-text release of **Learning When to Speak: Human-Inspired Unit Sensing
 for Machine Simultaneous Interpretation**.
+This repository is also associated with
+**[SimulSense: Sense-Driven Interpreting for Efficient Simultaneous Speech Translation](https://arxiv.org/pdf/2509.21932)**
+by Haotian Tan, Hiroki Ouchi, and Sakriani Sakti, which presents the SimulSense
+framework for sense-driven read/write decisions in simultaneous speech translation.
+
 SimulSense detects interpretation units in incoming speech to decide when a
 speech translation model should produce text. This repository provides the
 shared unit detector, Whisper + Qwen translation models, training code, and
@@ -328,7 +334,23 @@ External datasets and models remain subject to their respective terms.
 
 ## Citation
 
-If you use this repository, please cite **Learning When to Speak:
-Human-Inspired Unit Sensing for Machine Simultaneous Interpretation**.
-Use the publisher-provided citation from the
-[paper page on IEEE Xplore](https://ieeexplore.ieee.org/document/11732033).
+If you use this repository, please cite the relevant associated papers:
+
+- **Learning When to Speak: Human-Inspired Unit Sensing for Machine Simultaneous
+  Interpretation** — use the publisher-provided citation from
+  [IEEE Xplore](https://ieeexplore.ieee.org/document/11732033).
+- **SimulSense: Sense-Driven Interpreting for Efficient Simultaneous Speech
+  Translation** — [arXiv:2509.21932](https://arxiv.org/abs/2509.21932)
+  ([PDF](https://arxiv.org/pdf/2509.21932)).
+
+```bibtex
+@misc{tan2025simulsense,
+  title={SimulSense: Sense-Driven Interpreting for Efficient Simultaneous Speech Translation},
+  author={Haotian Tan and Hiroki Ouchi and Sakriani Sakti},
+  year={2025},
+  eprint={2509.21932},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2509.21932}
+}
+```
